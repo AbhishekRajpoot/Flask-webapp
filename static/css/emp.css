@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico&display=swap');
+body{
+    font-family: sans-serif;
+    background-color: #eee;
+}
+.label{
+    font-weight: bold;
+}
+.sidebar-link:hover{
+    background-color: turquoise;
+    border-radius: 7px;
+    box-shadow: 2px 5px 10px #fff;
+    transform:translateY(-1px) ;
+}
+@media(max-width: 768px){
+    .sidebar{
+        position: static;
+        height: auto;
+    }

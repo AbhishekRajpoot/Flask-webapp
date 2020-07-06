@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico&display=swap');
+body{
+    margin-top: -8px;
+    font-family: sans-serif;
+    background-color: #eee;
+}
+.sidebar{
+    position: fixed;
+    margin-top: 0;
+    margin-left: 0;
+    height: 100vh;
+    background: linear-gradient(57deg, #00C6A7 , #1E4D92 );
+}
+.h7:hover{
+    text-decoration: none;
+}
+.bottom-border{
+    text-align: center;
+    padding-bottom: 7px;
+    margin-top: 5px;
+    border-bottom: 3px groove #eee;
+}
+a{
+    font-weight: bold;
+}
+.sidebar-link:hover{
+    background-color: turquoise;
+    border-radius: 7px;
+    box-shadow: 1px 2px 5px orangered;
+    transform:translateY(-1px) ;
+    transition: all .3s;
+}
+.current{
+    background-color: turquoise;
+    border-radius: 7px;
+    box-shadow: 2px 5px 10px black;
+    transition: all .3s;
+}
+.current:hover{
+    box-shadow: 2px 3px 15px orangered;
+    transform:translateY(-1px) ;
+}
+.footer{
+    margin-top: 55px;
+    text-align: center;
+}
+#i{
+    transition: all .3s;
+    padding: 10px;
+    font-size: 30px;
+}
+#i:hover{
+    background-color: turquoise;
+    border-radius: 7px;
+    box-shadow: 1px 2px 5px orangered;
+    transform:translateY(-1px) ;
+}
+.topbar{
+    margin-top: 0px;
+    height: 57px;
+    background: linear-gradient(57deg, #1E4D92, #00C6A7);
+}
+.brand{
+    text-align: center;
+    margin-top: 15px;
+}
+.form,btn{
+   margin-top: 9px;
+}
+.btn{
+    font-size: 25px;
+}
+.input-group{
+    width: 75%;
+}
+
+.back{
+    background-color: darkcyan;
+    padding: 5px;
+}
+.search-input{
+    border: none;
+    transition: all .4s;
+    border-radius: 3px;
+    border-bottom: 2px solid #999;
+    font-weight: bold;
+}
+.search-input:focus{
+    box-shadow: none;
+    border-bottom: 2px solid #999;
+}
+.search-button:hover{
+    background-color: turquoise;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px orangered;
+    transform:translateY(-1px) ;
+    transition: all .3s;
+}
+.out{
+    text-decoration: none;
+}
+@media(max-width: 768px){
+    .sidebar{
+        position: static;
+        height: auto;
+    }
+    .topbar{
+        position: static;
+    }
+}
+.flash{
+    margin-top: 50px;
+}
+.card-common{
+    transition: all .4s;
+    box-shadow: 1px 2px 5px #999;
+}
+.card-common:hover{
+    transform: translateY(-1px);
+    box-shadow: 2px 3px 15px #999;
+}
+.fa-user-circle:hover{
+    background-color: #00C6A7;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 1px orangered;
+    transform:translateY(-1px) ;
+    transition: all .3s;
+}
+.row{
+    width: 100%;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 18px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.s-out{
+    position: absolute;
+    top: 0;
+    right: 18px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.bg-modal{
+    position: fixed;
+    display: none;
+    z-index: 1;
+    left: 0;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    
+}
+.modal-content{
+    position: relative;
+    width: 500px;
+    background-color: whitesmoke;
+    opacity: 1;
+    border-radius: 10px;
+    padding: 20px;
+}
+.modal-bg{
+    position: fixed;
+    display: none;
+    z-index: 1;
+    left: 0;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    
+}
+.label{
+    font-size: 19px;
+    margin-top: 20px;
+    font-weight: normal;
+}
+.form-control{
+    background: rgba(255, 255, 255, 0.2);
+}
+.submit{
+    background-color: turquoise;
+    border-radius: 7px;
+    transition: all .3s;
+}
+
+.submit:hover{
+    background-color: turquoise;
+    border-radius: 7px;
+    box-shadow: 1px 2px 5px orangered;
+    transform:translateY(-1px) ;
+    transition: all .3s;
+}
+.curve_chart{
+    height: auto;
+}
+
+
+

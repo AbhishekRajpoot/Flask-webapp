@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico&display=swap');
+*{
+    margin: 0; padding:0; box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar{
+    width: 100%; 
+    height: 80px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: linear-gradient(57deg, #06aca2, #1e4e92 );
+    color: white;
+    
+}
+
+.about {
+    margin-top: 80px;
+    height: 88vh;
+    background: #0f8a9d;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+    background: linear-gradient(57deg, #00C6A7 , #1E4D92 );
+}
+
+.leftside { 
+    width: 60%; 
+    height: auto;
+}
+
+.leftside img{ 
+    margin-top: 70px;
+    width: 700px;  
+    height: auto;
+}
+
+.rightside { 
+    width: 50%; 
+    height: auto; 
+    margin-top: 120px;
+}
+
+.rightside img{ 
+    width: 600px;  
+    height: 500px; 
+}
+.rightside h1{
+    font-weight: bold;
+    font-size: 50px;
+    color: #FFF;
+    letter-spacing: 5px;
+}
+.rightside p{
+    font-size: 20px;
+    color: floralwhite;
+    font-family: sans-serif;
+}
+
+.logo h1{
+    font-weight: bolder;
+    line-height: 67px;
+    padding-left: 50px;
+}
+.menu ul{
+    margin-left: 950px;
+}
+.menu ul li{
+    display: inline-block;
+    line-height: 70px;
+    margin: 0 5px;
+    list-style: none;
+    box-sizing: border-box;
+}
+.menu ul li a{
+    padding: 7px 13px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+}
+.menu ul li a:hover{
+    transition: .5s;
+    background: #d2e6f7;
+}
+.team-area{
+    padding: 60px 0;
+}
+h3{
+    text-align: center;
+    color: #1E4D92;
+    text-transform: uppercase;
+    font-size: 65px;
+    font-family: bignoodletitling;
+    letter-spacing: 5px;
+    font-weight: bolder;
+}
+.cards{
+    border: none;
+    background-color: #fff;
+}
+.img-area{
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.team-single:hover .side-two{
+    transform: rotateY(0deg);
+    border-radius: 5px;
+}
+.team-single:hover .side-one{
+    transform: rotateY(180deg);
+}
+.content-area{
+    transform: perspective(1000px);
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+.side-one{
+    position: relative;
+    transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+.side-two{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: dodgerblue;
+    transform: rotateY(-180deg);
+}
+.side-one, .side-two{
+    backface-visibility: hidden;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+.side-one .card, .side-two .card{
+    min-height: 312px;
+}
+.side-two .card a{
+    font-size: 22px;
+    color: brown;
+}
+h4{
+    color: #00C6A7 ;
+    font-family: bignoodletitling;
+    letter-spacing: 5px;
+    font-size: 25px;
+    font-weight: bold;
+}
+p{
+    font-family: merienda;
+}
+.list-unstyled a:hover{
+    text-decoration: none;
+}
+footer {
+    background: linear-gradient(57deg, #06aca2, #1e4e92 );
+    padding: 40px;
+}
+footer a {
+    color: #f8f9fa!important
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

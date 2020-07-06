@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="static\css\admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="title icon" href="../static/img/1.png">
+    <title>Admin</title>
+</head>
+<body>
+    <nav class="navbar">
+            <div class="row">
+                <div class="sidebar col-sm-3 col-md-3 col-lg-2">
+                    <h1 class="bottom-border" style="font-family: 'Pacifico', cursive; 
+                    color: red; font-size: 37px;">Ca:)<span style="font-family: 'Pacifico', cursive; color: cyan;">ddy</span></h1>
+                    <ul class="navbar-nav flex-column mt-4">
+                        <div class="bottom-border pb-3 mb-2">
+                            <img src="../static/img/3.jpg" width="50" class="rounded-circle mr-3">
+                            <h7><a href="#" class="h7 text-light">Abhishek Rajpoot</a></h7>
+                        </div>
+                        <li class="nav-item"><a href="#dash" class="nav-link sidebar-link current
+                            text-white p-3 ml-3 mr-3 mb-3"><i class="fa fa-home text-light mr-3 ml-2
+                            fa-lg"></i>Dashbord</a>
+                        </li>
+                        <li class="nav-item"><a href="#sales" class="nav-link sidebar-link
+                            text-white p-3 ml-3 mr-3 mb-3"><i class="fa fa-shopping-cart text-light mr-3 ml-2
+                            fa-lg"></i>Sales</a>
+                        </li>
+                        <li class="nav-item"><a href="#pay" class="nav-link sidebar-link
+                            text-white p-3 ml-3 mr-3 mb-3"><i class="fa fa-money text-light mr-3 ml-2
+                            fa-lg"></i>Payments</a>
+                        </li>
+                        <li class="nav-item"><a href="#emp" class="nav-link sidebar-link
+                            text-white p-3 ml-3 mr-3 mb-3"><i class="fa fa-users text-light mr-3 ml-2
+                            fa-lg"></i>Employee</a>
+                        </li>
+                        <li class="nav-item"><a href="#analytics" class="nav-link sidebar-link
+                            text-white p-3 ml-3 mr-3 mb-3"><i class="fa fa-bar-chart text-light mr-3 ml-2
+                            fa-lg"></i>Analytics</a>
+                        </li>
+                        <li id="button-addemp"class="nav-item"><a href="#" class="nav-link sidebar-link
+                            text-white p-3 ml-3 mr-3 mb-3"><i class="fa fa-user text-light mr-3 ml-2
+                            fa-lg"></i>Add Employee</a>
+                        </li>
+                    </ul>
+                    <div class="footer">
+                        <a href="https://www.facebook.com/CaddyTheSmartCart/"><i id="i" class="fa fa-facebook-square text-light"></i></a>
+                        <a href="https://www.instagram.com/caddy_the_smart_cart/"><i id="i" class="fa fa-instagram text-light"></i></a>
+                        <a href="#"><i id="i" class="fa fa-linkedin-square text-light "></i></a>
+                        
+                    </div>
+                </div>
+                <div class="col-xl-10 col-sm-9 col-md-9 col-lg-10 topbar ml-auto fixed-top">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4 class=" brand text-light text-uppercase">Dashbord</h4>
+                        </div>
+    
+                        <div class="col-md-5">
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="form form-control search-input" placeholder="Search...">
+                                    <button type="button" class="btn btn-white search-button"><i class="fa fa-search text-white" ></i></button>
+                                </div>
+                            </form>
+                        </div>
+    
+                        <div class="col-md-3 d-flex">
+                            <ul class="navbar">
+                                <li class="nav-item d-flex"><a href="#" class="nav-link">
+                                    <i class="fa fa-comments text-muted fa-lg"></i>
+                                </a></li>
+                                <li class="nav-item d-flex"><a href="#" class="nav-link">
+                                    <i class="fa fa-bell text-muted fa-lg"></i>
+                                </a></li>
+                                <li id="button" class="nav-item d-flex"><a href="#" class="nav-link">
+                                    <i class="fa fa-sign-out text-danger fa-lg"></i>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </nav>
+    <div id="dash" class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4 flash">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                                <div class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">+</span>
+                                </div>
+                                <h4>{{ message }}</h4> 
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="col-lg-4">
+            </div>
+        </div>
+    </div>
+    <!--sign-out model-->
+    <div class="bg-modal">
+        <div class="modal-content">
+            <form class="login-form">
+                <div class="close">+</div>
+                    <h1 id="1h">Want to leave ?</h1>                                  
+                    <div class="modal-header">
+                        <h5>Press logout to leave</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" type="button">Stay here</button>
+                        <button class="btn btn-danger" type="button">Logout</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+    <!--end-->
+
+    <!--add user modal-->
+    <div id="button-addemp" class="modal-bg">
+        <div class="modal-content">
+            <form class="login-form" action="add_emp" method="POST">
+                <div class="s-out">+</div>
+                    <h3 class="text-center mt-3">Add Employee</h3>
+                    <label class="label">Name </label>
+                    <input class="form-control" type="text" name="username" placeholder="Name">
+                    <label class="label">Email </label>
+                    <input class="form-control" type="text" name="email" placeholder="Email">
+                    <label class="label">Contact Number </label>
+                    <input class="form-control" type="text" name="contact" placeholder="Contact Number">
+                    <label class="label">Address </label>
+                    <input class="form-control" type="text" name="address" placeholder="Address">
+                    <div class="text-center mt-3">
+                        <button class="btn submit">Submit</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+    <!--end-->
+
+    <!--Cards-->
+    <section id="sales">
+            <div class="row">
+                <div class="col-xl-10 col-sm-9 col-md-9 col-lg-10 ml-auto">
+                    <div class="row col-lg-12 pt-5">
+                        <div class="col-xl-3 col-sm-6 p-2">
+                            <div class="card card-common">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <i class="fa fa-shopping-cart fa-3x text-warning"></i>
+                                        <div class="text-right text-secondary">
+                                            <h5>Sales</h5>
+                                            <h3>&#8377;13000</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="fa fa-sync mr-3 text-secondary"></i>
+                                    <span>Updated Now</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 p-2">
+                            <div class="card card-common">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <i class="fa fa-money fa-3x text-success"></i>
+                                        <div class="text-right text-secondary">
+                                            <h5>Expenses</h5>
+                                            <h3>&#8377;39000</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="fa fa-sync mr-3 text-secondary"></i>
+                                    <span>Updated Now</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 p-2">
+                            <div class="card card-common">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <i class="fa fa-users fa-3x text-info"></i>
+                                        <div class="text-right text-secondary">
+                                            <h5>User</h5>
+                                            <h3>15000</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-secondary">
+                                    <i class="fa fa-sync mr-3"></i>
+                                    <span>Updated Now</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 p-2">
+                            <div class="card card-common">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <i class="fa fa-line-chart fa-3x text-danger"></i>
+                                        <div class="text-right text-secondary">
+                                            <h5>Profit</h5>
+                                            <h3>&#8377;11600</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <i class="fa fa-sync mr-3 text-secondary"></i>
+                                    <span>Updated Now</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!--end of cards-->
+    <div id="pay">
+        <br><br><br><br>  
+    </div>
+    <!--tables-->
+    <section>
+        <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-xl-10 col-lg-9 col-md-9 col-lg-10 ml-auto">
+                <div class="row">
+                    <div class="col-12 col-xl-6 mb-xl-0">
+                        <h3 class="text-muted text-center">Staff Salary</h3>
+                        <table class="table bg-light text-center">
+                            <thead>
+                                <tr class="text-muted">
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Salary</th>
+                                    <th>Date</th>
+                                    <th>Contact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-muted">
+                                    <th>1</th>
+                                    <td>Abhishek</td>
+                                    <td>&#8377;32000</td>
+                                    <td>20 FEb, 2018</td>
+                                    <td><button type="button" class="btn btn-info btn-sm">Message</button></td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>2</th>
+                                    <td>Jaydeep</td>
+                                    <td>&#8377;32000</td>
+                                    <td>11 FEb, 2019</td>
+                                    <td><button type="button" class="btn btn-info btn-sm">Message</button></td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>3</th>
+                                    <td>Pragati</td>
+                                    <td>&#8377;22000</td>
+                                    <td>20 FEb, 2017</td>
+                                    <td><button type="button" class="btn btn-info btn-sm">Message</button></td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>4</th>
+                                    <td>Ayushi</td>
+                                    <td>&#8377;22000</td>
+                                    <td>20 Mar, 2018</td>
+                                    <td><button type="button" class="btn btn-info btn-sm">Message</button></td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>5</th>
+                                    <td>Nida</td>
+                                    <td>&#8377;22000</td>
+                                    <td>25 FEb, 2020</td>
+                                    <td><button type="button" class="btn btn-info btn-sm">Message</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--pagination-->
+                        <nav>
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2 px-3">
+                                        <span>&laquo</span>
+                                    </a>
+                                </li>
+                                <li class="active page-item">
+                                    <a href="#" class="page-link py-2">
+                                        1
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2">
+                                        2
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2">
+                                        3
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2 px-3">
+                                        <span>&raquo</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!--end of pagination-->
+                    </div>
+
+                    <div class="col-12 col-xl-6 mb-4">
+                        <h3 class="text-muted text-center mb-3"> Recent Payments</h3>
+                        <table class="table bg-light text-center">
+                            <thead>
+                                <tr class="text-muted">
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-muted">
+                                    <th>1</th>
+                                    <td>Abhishek</td>
+                                    <td>&#8377;32000</td>
+                                    <td>20 Mar, 2020</td>
+                                    <td><span class="badge badge-success w-75 py-2">Approved</span></td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>2</th>
+                                    <td>Jaydeep</td>
+                                    <td>&#8377;32000</td>
+                                    <td>25 Mar, 2020</td>
+                                    <td><span class="badge badge-danger w-75 py-2">Pending</span></td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>3</th>
+                                    <td>Pragati</td>
+                                    <td>&#8377;22000</td>
+                                    <td>15 Mar, 2020</td>
+                                    <td><span class="badge badge-success w-75 py-2">Approved</span></td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>4</th>
+                                    <td>Ayushi</td>
+                                    <td>&#8377;22000</td>
+                                    <td>15 Mar, 2020</td>
+                                    <td><span class="badge badge-success w-75 py-2">Approved</span></td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>5</th>
+                                    <td>Nida</td>
+                                    <td>&#8377;22000</td>
+                                    <td>25 Mar, 2020</td>
+                                    <td><span class="badge badge-danger w-75 py-2">Pending</span></td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>6</th>
+                                    <td>Shruti</td>
+                                    <td>&#8377;22000</td>
+                                    <td>20 FEb, 2018</td>
+                                    <td><span class="badge badge-success w-75 py-2">Approved</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--pagination-->
+                        <nav>
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2 px-3">
+                                        <span>&laquo</span>
+                                    </a>
+                                </li>
+                                <li class="active page-item">
+                                    <a href="#" class="page-link py-2">
+                                        1
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2">
+                                        2
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2">
+                                        3
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2 px-3">
+                                        <span>&raquo</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!--end of pagination-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div id="emp">
+        <br><br><br><br>  
+    </div>
+    <!--emp tables-->
+    <section>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-10 col-lg-9 col-md-9 col-lg-10 ml-auto">
+                <div class="row align-items-center">
+                    <div class="col-12 mb-4 mb-xl-0">
+                        <h3 class="text-muted text-center mb-3">Employees</h3>
+                        <table class="table bg-light text-center">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Joining Date</th>
+                                    <th>Contact Number</th>
+                                    <th>E-mail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-muted">
+                                    <th>1</th>
+                                    <td>Abhishek Rajpoot</td>
+                                    <td>Khadri GT Road LKO</td>
+                                    <td>20 Mar, 2020</td>
+                                    <th>0789654123</th>
+                                    <td>abhishek@caddy.com</td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>2</th>
+                                    <td>Jaydeep Kumar</td>
+                                    <td>Vashishthpuram lko</td>
+                                    <td>25 Mar, 2020</td>
+                                    <th>1234567890</th>
+                                    <td>Jaydeep@caddy.com</td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>3</th>
+                                    <td>Pragati Tiwari</td>
+                                    <td>Malihabad</td>
+                                    <td>15 Mar, 2020</td>
+                                    <td>2514637890</td>
+                                    <td>pragati@caddy.com</td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>4</th>
+                                    <td>Ayushi Arya</td>
+                                    <td>Telibagh</td>
+                                    <td>20 Mar, 2018</td>
+                                    <td>1023654897</td>
+                                    <td>ayushi@caddy.com</td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>5</th>
+                                    <td>Nida Khan</td>
+                                    <td>Jankipuram</td>
+                                    <td>25 FEb, 2020</td>
+                                    <td>1254693780</td>
+                                    <td>nida@caddy.com</td>
+                                </tr>
+                                <tr class="text-muted">
+                                    <th>6</th>
+                                    <td>Shruti Sharma</td>
+                                    <td>Etah</td>
+                                    <td>25 Mar, 2020</td>
+                                    <th>1234567890</th>
+                                    <td>shruti@caddy.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--pagination-->
+                        <nav>
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2 px-3">
+                                        <span>&laquo</span>
+                                    </a>
+                                </li>
+                                <li class="active page-item">
+                                    <a href="#" class="page-link py-2">
+                                        1
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2">
+                                        2
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2">
+                                        3
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link py-2 px-3">
+                                        <span>&raquo</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!--end of pagination-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end of tables-->
+    <div id="analytics">
+        <br><br><br><br>  
+    </div>
+    <!--charts-->
+    <section>
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-xl-10 col-lg-9 col-md-9 col-lg-10 ml-auto">
+                    <div class="row">
+                        <div class="col-12 col-xl-6 mb-4 mb-xl-0">
+                            <h3 class="text-muted text-center mb-3">Analytics</h3>
+                            <div id="piechart" style="width: auto; height: 400px;"></div>
+                        </div>
+                        <div class="col-12 col-xl-6 mb-4 mb-xl-0">
+                            <h3 class="text-muted text-center mb-3">Sales Prediction</h3>
+                            <div id="curve_chart" style="width: auto; height: 400px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--end of charts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
